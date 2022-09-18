@@ -1,5 +1,5 @@
 # Taller Modelación Y Simulación 1
-### Parte 1 
+## Parte 1 
 - ### ¿Cuál es el consumo, inyección y generación total de cada usuario?
 #### Consumo
 ``` sql
@@ -101,3 +101,6 @@ order by value) as a;
 |MAX CONSUMO |PAÍS|
 |-------------------|---|
 |16415.22553118579|	New York|
+
+
+## Parte 2
