@@ -18,7 +18,7 @@ order by sum(value);
 ```
 
 - #### ¿Cuál es la generación promedio mensual de cada usuario?
-```
+``` sql
 select avg(value) as "GENERACION PROMEDIO MENSUAL", id_user as "ID"
 from generation
 group by id_user
@@ -26,7 +26,7 @@ order by avg(value);
 ```
 
 - #### ¿Cuál es el promedio de los máximos mensuales de consumo de cada usuario?
-```
+``` sql
 select avg(a.CONSUMO) as "MAXIMO", a.ID
 from
 (select id_user as "ID", max(value) as "CONSUMO", month(timestamp) as "MES"
@@ -36,7 +36,7 @@ group by a.ID;
 ```
 
 - #### ¿Cuál es la ciudad con el mayor consumo?
-```
+``` sql
 select max(a.CONSUMPTION) as "MAX CONSUMPTION", a.CITY
 from
 (select cities.city_name as "CITY", sum(consumption.value) as "CONSUMPTION"
