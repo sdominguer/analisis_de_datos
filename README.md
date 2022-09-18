@@ -5,8 +5,19 @@ select sum(value) as "PAGO TOTAL CONSUMO", id_user as "ID"
 from consumption
 group by id_user
 order by sum(value);
-
-[tabla1.csv](https://github.com/sdominguer/analisis_de_datos/files/9592902/tabla1.csv)
+```
+|PAGO TOTAL CONSUMO | ID|
+|----------------------| 
+|62.185097581000065	|1281|
+|322.28663868511984	|1310|
+|325.5552420640003	|1285|
+|386.3718154831197	|1492|
+|387.8405311858003	|1286|
+|814.5192051750003	|1294|
+|1514.7299999330264	|1293|
+|3033.6500000000156	|1290|
+|8053.84800000002	|1239|
+|16027.384999999973	|1257|
 
 
 select sum(value) as "PAGO TOTAL INYECCIÓN", id_user as "ID"
