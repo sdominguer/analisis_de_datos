@@ -1,6 +1,6 @@
 # Taller Modelación Y Simulación 1
-### Parte 1
-- #### ¿Cuál es el consumo, inyección y generación total de cada usuario?
+### Parte 1 
+- ### ¿Cuál es el consumo, inyección y generación total de cada usuario?
 ``` sql
 select sum(value) as "PAGO TOTAL CONSUMO", id_user as "ID"
 from consumption
@@ -46,7 +46,7 @@ order by sum(value);
 |2451	|1299|
 |10598	|1298|
 
-- #### ¿Cuál es la generación promedio mensual de cada usuario?
+- ### ¿Cuál es la generación promedio mensual de cada usuario?
 ``` sql
 select avg(value) as "GENERACION PROMEDIO MENSUAL", id_user as "ID"
 from generation
@@ -60,7 +60,7 @@ order by avg(value);
 |0.8431|	1299|
 |1.8425	|1298|
 
-- #### ¿Cuál es el promedio de los máximos mensuales de consumo de cada usuario?
+- ### ¿Cuál es el promedio de los máximos mensuales de consumo de cada usuario?
 ``` sql
 select avg(a.CONSUMO) as "MAXIMO", a.ID
 from
@@ -83,7 +83,7 @@ group by a.ID;
 |0.7409106425	|1285|
 |0.6114518999999999|	1492|
 
-- #### ¿Cuál es la ciudad con el mayor consumo?
+- ### ¿Cuál es la ciudad con el mayor consumo?
 ``` sql
 select max(a.CONSUMPTION) as "MAX CONSUMO", a.CITY
 from
