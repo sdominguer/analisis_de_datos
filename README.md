@@ -6,6 +6,9 @@ from consumption
 group by id_user
 order by sum(value);
 
+[tabla1.csv](https://github.com/sdominguer/analisis_de_datos/files/9592902/tabla1.csv)
+
+
 select sum(value) as "PAGO TOTAL INYECCIÓN", id_user as "ID"
 from injection
 group by id_user
