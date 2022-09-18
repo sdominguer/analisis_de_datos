@@ -1,6 +1,7 @@
 # Taller Modelación Y Simulación 1
 ### Parte 1 
 - ### ¿Cuál es el consumo, inyección y generación total de cada usuario?
+#### Consumo
 ``` sql
 select sum(value) as "PAGO TOTAL CONSUMO", id_user as "ID"
 from consumption
@@ -20,6 +21,7 @@ order by sum(value);
 |8053.84800000002	|1239|
 |16027.384999999973	|1257|
 
+#### Inyección
 ``` sql
 select sum(value) as "PAGO TOTAL INYECCIÓN", id_user as "ID"
 from injection
@@ -33,6 +35,7 @@ order by sum(value);
 |56	|1293|
 |171	|1290|
 
+#### Generación
 ```sql
 select sum(value) as "PAGO TOTAL GENERACIÓN", id_user as "ID"
 from generation
