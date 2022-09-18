@@ -1,6 +1,6 @@
 # Parte 1
 - #### ¿Cuál es el consumo, inyección y generación total de cada usuario?
-```
+``` sql
 select sum(value) as "PAGO TOTAL CONSUMO", id_user as "ID"
 from consumption
 group by id_user
