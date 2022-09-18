@@ -19,12 +19,14 @@ order by sum(value);
 |8053.84800000002	|1239|
 |16027.384999999973	|1257|
 
-
+``` sql
 select sum(value) as "PAGO TOTAL INYECCIÓN", id_user as "ID"
 from injection
 group by id_user
 order by sum(value);
+```
 
+```sql
 select sum(value) as "PAGO TOTAL GENERACIÓN", id_user as "ID"
 from generation
 group by id_user
