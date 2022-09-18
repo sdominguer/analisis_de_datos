@@ -1,5 +1,6 @@
 # Parte 1
 - #### ¿Cuál es el consumo, inyección y generación total de cada usuario?
+```
 select sum(value) as "PAGO TOTAL CONSUMO", id_user as "ID"
 from consumption
 group by id_user
@@ -14,6 +15,7 @@ select sum(value) as "PAGO TOTAL GENERACIÓN", id_user as "ID"
 from generation
 group by id_user
 order by sum(value);
+```
 
 - #### ¿Cuál es la generación promedio mensual de cada usuario?
 select avg(value) as "GENERACION PROMEDIO MENSUAL", id_user as "ID"
