@@ -125,11 +125,13 @@ print(f"Dimensiones del dataset consumo: {consumo.shape}")
 print(f"Dimensiones del dataset generacion: {generacion.shape}")
 print(f"Dimensiones del dataset inyeccion: {inyeccion.shape}")
 ```
+
 #### Salida:
 ```Dimensiones del dataset citie: (10, 3)
 Dimensiones del dataset consumo: (26174, 3)
 Dimensiones del dataset generacion: (16419, 3)
-Dimensiones del dataset inyeccion: (15493, 3)```
+Dimensiones del dataset inyeccion: (15493, 3)
+```
 
 #### Descripción de nuestro dataset (estadísticas, tendencias, resumenes)
 ``` python
