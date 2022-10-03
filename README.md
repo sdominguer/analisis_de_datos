@@ -120,17 +120,25 @@ inyeccion=pd.read_csv(r"C:\Users\sarar\Downloads\injection.csv")
 - ### ¿Qué insights les dirías a los clientes sobre su consumo de energía?
 #### Dimensiones de nuestro dataset
 ``` python
+print(f"Dimensiones del dataset citie: {cities.shape}")
 print(f"Dimensiones del dataset consumo: {consumo.shape}")
+print(f"Dimensiones del dataset generacion: {generacion.shape}")
+print(f"Dimensiones del dataset inyeccion: {inyeccion.shape}")
 ```
 #### Salida:
-```Dimensiones del dataset consumo: (26174, 3)```
+```Dimensiones del dataset citie: (10, 3)
+Dimensiones del dataset consumo: (26174, 3)
+Dimensiones del dataset generacion: (16419, 3)
+Dimensiones del dataset inyeccion: (15493, 3)```
 
 #### Descripción de nuestro dataset (estadísticas, tendencias, resumenes)
 ``` python
 print(consumo.describe())
+print(generacion.describe())
+print(inyeccion.describe())
 ``` 
 #### Salida:
-|      |     id_user  |       value|
+|      |     id_user  |       value|             
 |------|--------------|------------|
 |count | 26174.000000 | 26174.000000|
 |mean  |  1302.380225 |     1.181645|
@@ -141,9 +149,33 @@ print(consumo.describe())
 |75%    | 1294.000000  |    0.690000|
 |max   |  1492.000000  |   24.828000|
 
+|      |     id_user  |       value|
+|------|--------------|------------|
+|count | 16419.000000 | 16419.000000|
+|mean  |  1350.454534  |    0.896454|
+|std   |    83.692953  |    1.473224|
+|min   |  1298.000000   |   0.000000|
+|25%   |  1298.000000  |    0.000000|
+|50%   |  1299.000000  |    0.214355|
+|75%  |   1493.000000  |    0.940000|
+|max  |   1493.000000  |    7.140000|
+
+|           |id_user |        value| 
+|------|--------------|------------|
+|count  |15493.000000 | 15493.000000|
+|mean   | 1346.388950  |    0.325583|
+|std    |   84.815757  |    0.819484|
+|min   |  1290.000000  |    0.000000|
+|25%   |  1290.000000  |    0.000000|
+|50%   |  1293.000000  |    0.000000|
+|75%   |  1492.000000  |    0.202000|
+|max   |  1492.000000  |    6.480000|
+
 #### Información más resumida de nuestro dataset
 ``` python
 print(consumo.info())
+print(generacion.info())
+print(inyeccion.info())
 ```
 #### Salida:
 |#   |Column    | Non-Null Count | Dtype|
@@ -152,13 +184,65 @@ print(consumo.info())
 | 1  | timestamp|  26174 non-null | object|
 | 2  | value    |  26174 non-null|  float64|
 
+|#   |Column    | Non-Null Count | Dtype|
+|--- | ------   |  --------------|  -----|
+| 0  | id_user  |  16419 non-null|  int64|
+| 1  | timestamp | 16419 non-null | object|
+| 2  | value    |  16419 non-null | float64|
+
+| #  | Column   |  Non-Null Count | Dtype|
+|--- | ------   |  -------------- | -----|
+| 0  | id_user  |  15493 non-null | int64|
+| 1  | timestamp | 15493 non-null | object|
+| 2  | value    |  15493 non-null | float64|
+
+
 #### Saber cuántos valores del mismo tipo hay 
 ``` python
 print(cities.value_counts())
+print(consumo.value_counts())
+print(generacion.value_counts())
+print(inyeccion.value_counts())
 ``` 
 #### Salida: 
 ```
-0
+id_user  id_city  city_name
+1239     12653    Seoul        1
+1257     12651    New York     1
+1281     12635    Prague       1
+1285     12635    Prague       1
+1286     12651    New York     1
+1290     12612    Paris        1
+1293     12612    Paris        1
+1294     12635    Prague       1
+1310     12635    Prague       1
+1492     12635    Prague       1
+------------------------------------
+id_user  timestamp                   value   
+1239     2022-03-01 00:00:00.000000  0.322000    1
+1293     2022-06-04 12:00:00.000000  0.190000    1
+         2022-06-04 22:00:00.000000  0.460000    1
+                        ....                 
+1285     2022-06-03 08:00:00.000000  0.041748    1
+         2022-06-03 07:00:00.000000  0.176025    1
+------------------------------------
+id_user  timestamp                   value
+1298     2022-01-01 05:00:00.000000  0.000    2
+         2022-04-16 07:00:00.000000  0.190    2
+         2022-04-14 13:00:00.000000  4.560    2
+                     ...
+1309     2022-02-04 19:00:00.000000  0.001    1
+         2022-02-04 20:00:00.000000  0.000    1
+         2022-02-04 21:00:00.000000  0.000    1
+         2022-02-04 22:00:00.000000  0.000    1
+------------------------------------
+id_user  timestamp                   value
+1293     2022-04-14 23:00:00.000000  0.00     2
+1290     2022-01-01 00:00:00.000000  0.00     1
+                    ...
+1293     2022-02-06 11:00:00.000000  0.40     1
+         2022-02-06 12:00:00.000000  0.71     1
+         2022-02-06 13:00:00.000000  1.96     1
 ```
 
 #### Graficando los datos anteriores
@@ -168,20 +252,46 @@ plt.title("Value of users consumption")
 plt.xlabel('User ID') 
 plt.ylabel('Consumption')
 plt.show()
+
+generacion.id_user.value_counts().plot(kind="bar", color="pink")
+plt.title("Value of users generation")
+plt.xlabel('User ID') 
+plt.ylabel('Generation')
+plt.show()
+
+inyeccion.id_user.value_counts().plot(kind="bar", color="pink")
+plt.title("Value of users inyection")
+plt.xlabel('User ID') 
+plt.ylabel('Inyection')
+plt.show()
 ``` 
 
 #### Salida:
 ![img](https://user-images.githubusercontent.com/88257827/191152264-9908a832-4048-4402-9b1c-49cd5227a7f2.png)
+![Figure_2](https://user-images.githubusercontent.com/88257827/193512521-6b570eae-9ad8-4da2-8c55-1278dec0f043.png)
+![Figure_3](https://user-images.githubusercontent.com/88257827/193512650-e4bfb2d4-04fa-4d1f-94bb-b479ca747a90.png)
 
 #### Por último, calculemos la oblicuidad (asimetría) y curtosis de nuestra línea
 ``` python
 print(f"Skewness: {consumo['value'].skew()}")
 print(f"Kurtosis: {consumo['value'].kurt()}")
+
+print(f"Skewness: {generacion['value'].skew()}")
+print(f"Kurtosis: {generacion['value'].kurt()}")
+
+print(f"Skewness: {inyeccion['value'].skew()}")
+print(f"Kurtosis: {inyeccion['value'].kurt()}")
 ``` 
 #### Salida:
 ```
 Skewness: 3.550503501918619
 Kurtosis: 14.713459148756845
+
+Skewness: 2.084752545724789
+Kurtosis: 3.7189331017390366
+
+Skewness: 3.5732681373874864
+Kurtosis: 14.010812558407391
 ```
 
 ### Conclusión: 
