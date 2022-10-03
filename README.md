@@ -185,14 +185,17 @@ Kurtosis: 14.713459148756845
 ```
 
 ### Conclusión: 
-- La mayoría de usuarios tiene un consumo total mayor a 3000
-- 
+- La mayoría de usuarios tiene un consumo total mayor a 3000.
+- En horas de la noche hay mayor consumo, mientras que en horas de la madrugada en muchos casos es de 0.
+- Aunque parezca raro, también hay consumo de energía en el día, quizás no sea por iluminación sino por aparatos electrónicos conectados.
+- No hay una desviación estándar muy alta entre el total de consumo de los usuarios, por lo que los valores están cerca a la media, lo que inddica que los usuarios están consumiendo cantidades de energía similares.
 
-- ###  ¿Qué acciones pueden tomar los clientes para reducir su consumo de energía?
+- ### ¿Qué acciones pueden tomar los clientes para reducir su consumo de energía?
    - Dormirse más temprano para aprovechar más la luz natural.
    - Utilizar electrodomésticos y equipos electrónicos de consumo eficiente.
    - Apagar las luces cuando no estén haciendo uso de ellas y desconectar aparatos electrónicos si no se están usando.
-   - 
+   - Desconectar dispositivos electrónicos cuando ya no necesiten usarlos.
 
-- ¿Qué insights le darías a los comercializadores de energía respectivos?
-
+- ### ¿Qué insights le darías a los comercializadores de energía respectivos?
+   - Que su mayor ganancia está en la ciudad de Nueva York.
+   - Que en países con estaciones puede haber menos consumo energético, debido a que oscurece mucho mas tarde en algunos casos y habrá más aprovechamiento de luz        natural.
