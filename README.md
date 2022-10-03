@@ -140,6 +140,9 @@ print(generacion.describe())
 print(inyeccion.describe())
 ``` 
 #### Salida:
+```
+- Consumo
+
 |      |     id_user  |       value|             
 |------|--------------|------------|
 |count | 26174.000000 | 26174.000000|
@@ -151,6 +154,8 @@ print(inyeccion.describe())
 |75%    | 1294.000000  |    0.690000|
 |max   |  1492.000000  |   24.828000|
 
+-Generación
+
 |      |     id_user  |       value|
 |------|--------------|------------|
 |count | 16419.000000 | 16419.000000|
@@ -161,6 +166,8 @@ print(inyeccion.describe())
 |50%   |  1299.000000  |    0.214355|
 |75%  |   1493.000000  |    0.940000|
 |max  |   1493.000000  |    7.140000|
+
+-Inyección
 
 |           |id_user |        value| 
 |------|--------------|------------|
@@ -180,6 +187,7 @@ print(generacion.info())
 print(inyeccion.info())
 ```
 #### Salida:
+```
 - Consumo
 |#   |Column    | Non-Null Count | Dtype|
 |--- | ------   |  --------------|  -----|
@@ -201,7 +209,7 @@ print(inyeccion.info())
 | 1  | timestamp | 15493 non-null | object|
 | 2  | value    |  15493 non-null | float64|
 
-
+```
 #### Saber cuántos valores del mismo tipo hay 
 ``` python
 print(cities.value_counts())
