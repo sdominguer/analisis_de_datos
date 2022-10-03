@@ -180,18 +180,21 @@ print(generacion.info())
 print(inyeccion.info())
 ```
 #### Salida:
+- Consumo
 |#   |Column    | Non-Null Count | Dtype|
 |--- | ------   |  --------------|  -----|
 | 0  | id_user  |  26174 non-null|  int64|
 | 1  | timestamp|  26174 non-null | object|
 | 2  | value    |  26174 non-null|  float64|
 
+- Generación
 |#   |Column    | Non-Null Count | Dtype|
 |--- | ------   |  --------------|  -----|
 | 0  | id_user  |  16419 non-null|  int64|
 | 1  | timestamp | 16419 non-null | object|
 | 2  | value    |  16419 non-null | float64|
 
+- Inyección
 | #  | Column   |  Non-Null Count | Dtype|
 |--- | ------   |  -------------- | -----|
 | 0  | id_user  |  15493 non-null | int64|
