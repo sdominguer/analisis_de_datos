@@ -185,7 +185,8 @@ Kurtosis: 14.713459148756845
 ```
 
 ### Conclusión: 
-esto le toca a julian
+- La mayoría de usuarios tiene un consumo total mayor a 3000
+- 
 
 - ###  ¿Qué acciones pueden tomar los clientes para reducir su consumo de energía?
    - Dormirse más temprano para aprovechar más la luz natural.
